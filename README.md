@@ -1,3 +1,46 @@
+Run: git clone https://github.com/tobidcoder/books.git
+
+Then: cd books
+
+Then : composer install
+
+Then
+
+npm install
+
+Then: Create database books
+
+cp .env.example .env
+
+Change database name in .env to books
+
+Run
+
+php artisan key:generate
+
+php artisan migrate
+
+Then:
+
+php artisan db:seed
+
+Then
+
+php artisan passport:install
+
+Finally Run
+
+php artisan serve
+
+Open postman, login with one of the random user generate, email, password = password for all user.
+
+Set headers with Auth token generate.
+
+
+Happy testing.
+
+
+
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
 
 <p align="center">
