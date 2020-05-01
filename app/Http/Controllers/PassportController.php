@@ -19,15 +19,17 @@ class PassportController extends Controller
             'name' => 'required|min:3',
             'email' => 'required|email|unique:users',
             'password' => 'required|min:6',
+            'is_admin' => 'required|integer'
         ]);
  
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => bcrypt($request->password)
+            'password' => bcrypt($request->password),
+            'is_admin' => $request->is_admin,
         ]);
  
-        $token = $user->createToken('TutsForWeb')->accessToken;
+        $token = $user->createToken('tobibooks')->accessToken;
  
         return response()->json(['token' => $token], 200);
     }
@@ -47,7 +49,7 @@ class PassportController extends Controller
         ];
         
         if (auth()->attempt($credentials)) {
-            $token = auth()->user()->createToken('TutsForWeb')->accessToken;
+            $token = auth()->user()->createToken('tobibooks')->accessToken;
             return response()->json([
                 'token' => $token,
                 'data'  => $request->email,

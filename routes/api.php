@@ -22,3 +22,8 @@ Route::post('/login', 'PassportController@login')->name('login');
 Route::post('/register', 'PassportController@register')->name('register');
 
 
+Route::middleware('auth:api')->group(function(){
+    Route::get('books', 'BookController@index')->name('list-all-books');
+    Route::post('books', 'BookController@store')->middleware('is_admin');
+});
+
