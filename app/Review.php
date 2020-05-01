@@ -11,4 +11,6 @@ class Review extends Model
         'book_id', 'review', 'comment', 'author_id',	
 	
     ];
+
+ 
 }

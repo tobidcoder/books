@@ -6,10 +6,7 @@ class ReviewSeeder extends Seeder
 {
     /**
      * Run the database seeds.
-     *book_id
-	review
-	comment
-	user_id
+     *
      * @return void
      */
     public function run()
@@ -19,6 +16,19 @@ class ReviewSeeder extends Seeder
             'book_id' => '1',
             'review' => '4',
             'comment' => 'Greate book',
+            'user_id' => '2'
+        ]);
+
+        App\Review::create([
+            'book_id' => '1',
+            'review' => '4',
+            'comment' => 'cool book',
+            'user_id' => '2'
+        ]);
+        App\Review::create([
+            'book_id' => '1',
+            'review' => '4',
+            'comment' => 'wa ooo book',
             'user_id' => '2'
         ]);
     }
